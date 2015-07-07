@@ -1,0 +1,26 @@
+<h2>{{movies.title}}</h2>
+<div>
+	搜索：
+	<input type="text" ng-model="query">
+	<hr>
+	您在搜索: {{query}}
+	<br>
+	排序：
+	<select ng-model="orderBy">
+		<option value="title">按名称</option>
+		<option value="rating.average">按评分</option>
+		<option value="year">按年份</option>
+	</select>
+</div>
+<ul>
+	<li ng-repeat="movie in movies.subjects | filter: query | orderBy: orderBy:true">
+		<p><a href="{{movie.alt}}">{{movie.title}}</a></p>
+		<img ng-src="{{movie.images.large}}">
+		<p>年份：{{movie.year}}</p>
+		<p>评分：{{movie.rating.average}}</p>
+		<p>类型：{{movie.genres}}</p>
+		<p>演员：
+			<span ng-repeat="star in movie.casts">{{star.name}}</span>
+		</p>
+	</li>
+</ul>
