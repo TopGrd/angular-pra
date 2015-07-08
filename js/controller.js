@@ -7,29 +7,6 @@
  * @author Li'Zhuo(lizhuo04@baidu.com||topgrd@outlook.com)
  */
 'use strict';
-/*function movieCtrl($scope) {
-    $scope.movies = [
-        {
-            "name": "Lio",
-            "detail": "a boy lost"
-        },
-        {
-            "name": "JACK AND ROSE",
-            "detail": "two boy lost"
-        },
-        {
-            "name": "JACK AND ROSE AND MARK",
-            "detail": "three boy lost"
-        },
-        {
-            "name": "No one live",
-            "detail": "no body alive"
-        }
-    ];
-
-    $scope.orderBy = 'name';
-}
-*/
 
 var movieCtrl = ['$scope', '$http', function($scope, $http){
     $http.get('mock/movie.json').success(function (data) {
